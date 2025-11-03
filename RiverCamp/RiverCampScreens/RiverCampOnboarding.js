@@ -62,7 +62,7 @@ const RiverCampOnboarding = () => {
               if (riverCampCurrIndex < 3) {
                 setRiverCampCurrIndex(riverCampCurrIndex + 1);
               } else {
-                navigation.replace('SenerityBloomTab');
+                navigation.replace('RiverCampTabNav');
               }
             }}
           >
