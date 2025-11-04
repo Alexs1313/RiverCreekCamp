@@ -96,7 +96,10 @@ const RiverCampFearmetr = () => {
         ]}
       >
         <Text style={styles.emptyscreentxt}>{rivercamptxt}</Text>
-        <Image source={rivercampimg} resizeMode="contain" />
+        <Image
+          source={rivercampimg}
+          style={{ width: '100%', height: height * 0.6, borderRadius: 12 }}
+        />
       </View>
 
       <RiverCampModal
