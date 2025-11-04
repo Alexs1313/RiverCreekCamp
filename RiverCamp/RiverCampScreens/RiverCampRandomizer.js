@@ -9,6 +9,7 @@ import {
   useWindowDimensions,
   Image,
   Easing,
+  Platform,
 } from 'react-native';
 import RiverCampRandomizerCard from '../RiverCampComponents/RiverCampRandomizerCard';
 import { rivercampstories } from '../RiverCampData/rivercampstories';
@@ -80,7 +81,13 @@ export default function RandomCardCarousel() {
 
   return (
     <RiverCampLayout>
-      <View style={styles.rivercampcontainer}>
+      <View
+        style={[
+          styles.rivercampcontainer,
+          isModalVisible &&
+            Platform.OS === 'android' && { filter: 'blur(2px)' },
+        ]}
+      >
         {showRiverCampCarousel ? (
           <View
             style={[
@@ -161,9 +168,7 @@ export default function RandomCardCarousel() {
               isRiverCardSpinning && { opacity: 0.8 },
             ]}
           >
-            <Text style={styles.rivercampbtntext}>
-              {isRiverCardSpinning ? '...' : 'Start'}
-            </Text>
+            <Text style={styles.rivercampbtntext}>Start</Text>
           </ImageBackground>
         </TouchableOpacity>
       </View>
@@ -204,11 +209,11 @@ const styles = StyleSheet.create({
     height: 23,
     justifyContent: 'center',
     alignItems: 'center',
-    top: 50,
+    marginTop: 50,
   },
   rivercampbtntext: {
     color: '#FFFFFF',
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: '400',
   },
 });

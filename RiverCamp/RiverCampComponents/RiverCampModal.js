@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
   },
   rivercampbuttontext: {
     color: '#FFFFFF',
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: '500',
   },
   rivercampmodaltxt: {

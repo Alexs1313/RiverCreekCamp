@@ -1,6 +1,7 @@
 import {
   Image,
   ImageBackground,
+  Platform,
   ScrollView,
   StyleSheet,
   Text,
@@ -26,7 +27,14 @@ const RiverCampOnboarding = () => {
         <View style={{ alignItems: 'center', flex: 1, paddingBottom: 40 }}>
           <View style={styles.rivercampwelcomecontainer}>
             <Text style={styles.rivercampwelcometitle}>
-              {riverCampCurrIndex === 0 && 'Welcome to River Creek Camp'}
+              {Platform.OS === 'ios' ? (
+                <>{riverCampCurrIndex === 0 && 'Welcome to River Creek Camp'}</>
+              ) : (
+                <>
+                  {riverCampCurrIndex === 0 &&
+                    'Welcome to 888 Nights at River Camp'}
+                </>
+              )}
               {riverCampCurrIndex === 1 && 'Read the Tales, Feel the Fear'}
               {riverCampCurrIndex === 2 && 'Meet the Fear Statue'}
               {riverCampCurrIndex === 3 && 'Your Campfire Awaits'}
@@ -105,7 +113,7 @@ const styles = StyleSheet.create({
   },
   rivercampbuttontext: {
     color: '#FFFFFF',
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: '500',
   },
   rivercampwelcometitle: {

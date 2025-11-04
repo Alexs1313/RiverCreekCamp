@@ -6,6 +6,7 @@ import {
   StyleSheet,
   ImageBackground,
   ScrollView,
+  Platform,
 } from 'react-native';
 
 const Rivercamploader = () => {
@@ -77,10 +78,17 @@ const Rivercamploader = () => {
         showsVerticalScrollIndicator={false}
       >
         <View style={styles.loadercnt}>
-          <Image
-            source={require('../../assets/images/rivercampldr.png')}
-            style={{ bottom: 45 }}
-          />
+          {Platform.OS === 'ios' ? (
+            <Image
+              source={require('../../assets/images/rivercampldr.png')}
+              style={{ bottom: 45 }}
+            />
+          ) : (
+            <Image
+              source={require('../../assets/images/icon.png')}
+              style={{ bottom: 45, width: 220, height: 220, borderRadius: 22 }}
+            />
+          )}
         </View>
 
         <View style={styles.loaderwrap}>
