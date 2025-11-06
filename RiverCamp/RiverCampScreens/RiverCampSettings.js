@@ -140,7 +140,11 @@ const RiverCampSettings = () => {
                 <Text style={styles.rivercampwelcsubtitle}>Share App</Text>
                 <TouchableOpacity
                   activeOpacity={0.7}
-                  onPress={() => Linking.openURL('')}
+                  onPress={() =>
+                    Linking.openURL(
+                      'https://apps.apple.com/us/app/10-nights-at-river-creek-camp/id6754833392',
+                    )
+                  }
                 >
                   <Image
                     source={require('../../assets/images/rivercampshareapp.png')}
